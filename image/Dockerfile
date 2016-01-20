@@ -1,16 +1,12 @@
-FROM osixia/web-baseimage:0.1.8-dev
+FROM osixia/web-baseimage:0.1.8
 MAINTAINER Bertrand Gouny <bertrand.gouny@osixia.net>
-
-# Use baseimage's init system.
-# https://github.com/osixia/docker-light-baseimage/blob/stable/image/tool/run
-CMD ["/container/tool/run"]
 
 # Install Nginx from web-baseimage
 
 # https://github.com/osixia/docker-light-baseimage/blob/stable/image/tool/install-service-available
 # https://github.com/osixia/docker-web-baseimage/tree/stable/image/service-available/apache2
 RUN apt-get -y update \
-    && /container/tool/install-service-available apache2 cfssl
+    && /container/tool/add-service-available :apache2 :cfssl
 
 # Add service directory to /container/service
 ADD service /container/service
@@ -22,7 +18,7 @@ RUN /container/tool/install-service \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Add default env variables
-ADD env.yaml /container/environment/env.yaml
+ADD environment /container/environment/99-default
 
 # Expose apache2 proxy port
 EXPOSE 5000
