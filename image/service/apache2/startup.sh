@@ -4,8 +4,8 @@
 # https://github.com/osixia/docker-light-baseimage/blob/stable/image/tool/log-helper
 log-helper level eq trace && set -x
 
-ln -s ${CONTAINER_SERVICE_DIR}/apache2/assets/conf-available/registry-proxy.conf /etc/apache2/conf-available/registry-proxy.conf
-ln -s ${CONTAINER_SERVICE_DIR}/apache2/assets/sites-available/registry-proxy.conf /etc/apache2/sites-available/registry-proxy.conf
+ln -sf ${CONTAINER_SERVICE_DIR}/apache2/assets/conf-available/registry-proxy.conf /etc/apache2/conf-available/registry-proxy.conf
+ln -sf ${CONTAINER_SERVICE_DIR}/apache2/assets/sites-available/registry-proxy.conf /etc/apache2/sites-available/registry-proxy.conf
 
 a2enconf registry-proxy
 a2ensite registry-proxy
