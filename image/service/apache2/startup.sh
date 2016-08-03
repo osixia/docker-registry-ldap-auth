@@ -15,7 +15,7 @@ FIRST_START_DONE="${CONTAINER_STATE_DIR}/docker-registry-ldap-auth-first-start-d
 if [ ! -e "$FIRST_START_DONE" ]; then
 
     # check certificat and key or create it
-    cfssl-helper ${REGISTRY_LDAP_AUTH_CFSSL_PREFIX} "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_CRT_FILENAME" "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_KEY_FILENAME" "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_CA_CRT_FILENAME"
+    ssl-helper ${REGISTRY_LDAP_AUTH_SSL_HELPER_PREFIX} "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_CRT_FILENAME" "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_KEY_FILENAME" "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_CA_CRT_FILENAME"
 
     # add CA certificat config if CA cert exists
     if [ -e "${CONTAINER_SERVICE_DIR}/apache2/assets/certs/$REGISTRY_LDAP_AUTH_HTTPS_CA_CRT_FILENAME" ]; then
