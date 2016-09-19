@@ -7,4 +7,4 @@ registry-ldap-auth
 
 [hub]: https://hub.docker.com/r/osixia/registry-ldap-auth/
 
-**A docker resgitry proxy that add ldap auth to authenticate users.**
+**A docker registry proxy that add ldap auth to authenticate users.**
