@@ -1,5 +1,5 @@
 NAME = osixia/registry-ldap-auth
-VERSION = 0.1.2
+VERSION = 0.1.3
 
 .PHONY: all build build-nocache test tag_latest release
 
