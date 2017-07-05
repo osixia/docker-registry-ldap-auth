@@ -1,4 +1,4 @@
-FROM osixia/web-baseimage:1.0.0
+FROM osixia/web-baseimage:1.1.0
 MAINTAINER Bertrand Gouny <bertrand.gouny@osixia.net>
 
 # Install Nginx from web-baseimage
