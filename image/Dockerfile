@@ -1,10 +1,10 @@
-FROM osixia/web-baseimage:1.0.0
+FROM osixia/web-baseimage:1.1.0
 MAINTAINER Bertrand Gouny <bertrand.gouny@osixia.net>
 
-# Install Nginx from web-baseimage
+# Install apache2 from web-baseimage
 
 # https://github.com/osixia/docker-light-baseimage/blob/stable/image/tool/install-service-available
-# https://github.com/osixia/docker-web-baseimage/tree/stable/image/service-available/apache2
+# https://github.com/osixia/docker-web-baseimage/tree/stable/image/service-available/:apache2
 RUN apt-get -y update \
     && /container/tool/add-service-available :apache2 :ssl-tools \
     && apt-get clean \
