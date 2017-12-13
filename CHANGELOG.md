@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.2
+  - Upgrade baseimage: web-baseimage:1.1.1
+
 ## 0.2.1
   - Add https registry support (see REGISTRY_LDAP_AUTH_REGISTRY_CA_CRT_FILENAME)
 
